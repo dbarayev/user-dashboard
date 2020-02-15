@@ -1,4 +1,4 @@
-![App Preview/Screenshot](https://github.com/dbarayev/user-dashboard/src/assets/screenshot.png)
+![App Preview/Screenshot](https://raw.githubusercontent.com/dbarayev/user-dashboard/master/src/assets/screenshot.png)
 
 # user-dashboard
 Sample user dashboard with angular.
