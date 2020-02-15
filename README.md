@@ -3,6 +3,8 @@
 # user-dashboard
 Sample user dashboard with angular.
 
+This project was inspired by the design created by [Abir Mahmood](https://www.linkedin.com/in/abirmahmood/). Please see the link [here](https://dribbble.com/shots/7116199-Cloud-Based-Business-Management-WebApp-Design-Dashboard-Screen) for more details.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
 ## Dependencies
