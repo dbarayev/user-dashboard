@@ -1,0 +1,52 @@
+.dashboard-container {
+    padding: 30px;
+    .total-row {
+        .item-average-container {
+            display: flex;
+            .item-average {
+                height: 80px;
+                width: 200px;
+                background-color: #ffffff;
+                margin: 10px;
+                border-radius: 10px;
+                padding: 10px 15px;
+            }
+        }
+        
+    }
+    .revenue-container, .all-projects-container {
+        width: 55%;
+        height: 375px;
+        background-color: #ffffff;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 15px;
+        h4 {
+            display: inline-block;
+        }
+        mat-form-field {
+            width: 40%;
+            display: inline-block;
+            float: right;
+        }
+        canvas {
+            max-height: 275px;
+        }
+    }
+    .activities-container, .clients-container {
+        width: 40%;
+        height: 375px;
+        background-color: #ffffff;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 15px;
+    }
+}
+@media(max-width: 991.98px) {
+    .widget {
+        width: 100% !important;
+        .table-responsive {
+            max-height: 95%;
+        }
+    }
+}

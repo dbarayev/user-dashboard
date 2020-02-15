@@ -1,0 +1,110 @@
+<div class="container dashboard-container">
+    <h1>Dashboard</h1>
+    <!-- Monthly Totals -->
+    <div class="row total-row" *ngIf="totalIsLoaded">
+        <div class="item-average-container flex-wrap" *ngFor="let total of monthly_totals">
+            <!-- Project Budget -->
+            <div class="item-average">
+                <div>Project Budget</div>
+                <div><strong>{{total.project_budget | currency: 'USD' : 'symbol': '1.0-0'}}</strong></div>
+            </div>
+            <!-- Revenue This Month -->
+            <div class="item-average">
+                <div>Revenue This Month</div>
+                <div><strong>{{total.revenue | currency: 'USD' : 'symbol': '1.0-0'}}</strong></div>
+            </div>
+            <!-- New Leads This Month -->
+            <div class="item-average">
+                <div>New Leads This Month</div>
+                <div><strong>{{total.leads}}</strong></div>
+            </div>
+            <!-- Quoted This Month -->
+            <div class="item-average">
+                <div>Quoted This Month</div>
+                <div><strong>{{total.quoted | currency: 'USD' : 'symbol': '1.0-0'}}</strong></div>
+            </div>
+            <!-- Outstanding Invoices -->
+            <div class="item-average">
+                <div>Outstanding Invoices</div>
+                <div><strong>{{total.outstanding_invoices | currency: 'USD' : 'symbol': '1.0-0'}}</strong></div>
+            </div>
+        </div>
+    </div>
+    <!-- Revenue and Activities -->
+    <div class="row">
+        <!-- Revenue -->
+        <div class="revenue-container widget" [hidden]="!revenueIsLoaded">
+            <h4>Revenue</h4>
+            <mat-form-field>
+                <mat-label>Year</mat-label>
+                <mat-select [(value)]="selected" (selectionChange)="updateChartDetails()">
+                    <mat-option *ngFor="let year of years" value="{{year}}">{{year}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <!-- Line Chart canvas -->
+            <div>
+                <canvas #myCanvas>{{ chart }}</canvas>
+            </div>
+
+        </div>
+        <!-- Activities by Teams -->
+        <div class="activities-container widget" [hidden]="!activitiesAreLoaded">
+            <h4>Activities by Teams</h4>
+            <!-- Doughnut Chart canvas -->
+            <div>
+                <canvas #doughnutCanvas>{{ doughnutChart }}</canvas>
+            </div>
+        </div>
+    </div>
+    <!-- Projects and Clients -->
+    <div class="row">
+        <!-- All Projects -->
+        <div class="all-projects-container widget">
+            <h4>All Projects</h4>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Project Name</th>
+                            <th>Deadline</th>
+                            <th>Budget</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let proj of project">
+                            <td>{{proj.project_no}}</td>
+                            <td>{{proj.name}}</td>
+                            <td>{{proj.deadline}}</td>
+                            <td>{{proj.budget | currency: 'USD' : 'symbol': '1.0-0'}}</td>
+                            <td [ngClass]="{'in-progress':proj.status === 'In Progress', 'on-hold':proj.status === 'On Hold', 'complete':proj.status === 'Complete'}">{{proj.status}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Clients -->
+        <div class="clients-container widget">
+            <h4>Clients</h4>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Client</th>
+                            <th>No. of Active Proj.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let client of client">
+                            <td>{{client.id}}</td>
+                            <td>{{client.name}}</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
