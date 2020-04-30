@@ -1,0 +1,107 @@
+.container {
+    padding: 30px;
+    .members-container {
+        width: 40%;
+        height: 300px;
+        background-color: #ffffff;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 15px;
+        .container-header {
+            display: flex;
+            justify-content: space-between;
+            h4 {
+                margin: 0;
+            }  
+        }
+        .all-members {
+            
+            .member {
+                display: grid;
+                grid-template-columns: 18% 35% 25% 22%;
+                padding: 7px 0;
+                align-items: center;
+                .avatar {
+                    img {
+                        height: 50px;
+                        width: 50px;
+                        border-radius: 40%;
+                    }
+                }
+                .name {
+                    font-weight: bold;
+                    .job-title {
+                        font-weight: normal;
+                    }
+                }
+                .progress-container {
+                    
+                }
+            }    
+        }
+    }
+    .summary-container {
+        width: 55%;
+        height: 300px;
+        background-color: #ffffff;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 15px;
+    }
+    .timeline-container {
+        width: 100%;
+        height: 300px;
+        background-color: #ffffff;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 15px;
+    }
+    .budget-container {
+        width: 48%;
+        height: 300px;
+        background-color: #ffffff;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 15px;
+    }
+    .activities-container {
+        width: 47%;
+        height: 300px;
+        background-color: #ffffff;
+        margin: 10px;
+        border-radius: 10px;
+        padding: 15px;
+    }
+}
+#memberModal {
+    .modal-dialog {
+        .member-modal-content {
+            .modal-header {
+                border-bottom: none;  
+            }
+            .all-members {
+                .member {
+                    display: grid;
+                    grid-template-columns: 18% 35% 25% 22%;
+                    padding: 7px 0;
+                    align-items: center;
+                    .avatar {
+                        img {
+                            height: 50px;
+                            width: 50px;
+                            border-radius: 40%;
+                        }
+                    }
+                    .name {
+                        font-weight: bold;
+                        .job-title {
+                            font-weight: normal;
+                        }
+                    }
+                    .progress-container {
+                    }
+                }    
+            }   
+        }
+    }
+}

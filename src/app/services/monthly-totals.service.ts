@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { MonthlyTotals } from '../user-dashboard/monthly-totals';
+import { MonthlyTotals } from '../user-dashboard/widgets/monthly-totals';
 
 @Injectable({
   providedIn: 'root'

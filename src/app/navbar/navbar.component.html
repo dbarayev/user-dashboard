@@ -1,5 +1,5 @@
 <!-- Bootstrap Default Nav -->
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light navbar-expand">
     <a class="navbar-brand" href="#">Dmitriy's Company</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,7 +10,7 @@
             <a class="nav-link active" routerLink="/">Dashboard</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" routerLink="/">Projects</a>
+        <a class="nav-link" routerLink="/projects">Projects</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/">Tasks</a>
@@ -28,5 +28,35 @@
           <a class="nav-link" routerLink="/">Settings</a>
         </li>
       </ul>
+    </div>
+    <!--Notifications-->
+    <div class="notifications">
+      <span class="material-icons" *ngIf="!notificationClicked" (click)="notificationClickChange()" matBadge="{{notificationCounter}}" matBadgePosition="above after" matBadgeColor="warn" [matBadgeHidden]="!newNotifications">notifications</span>
+      <span class="material-icons" *ngIf="notificationClicked" (click)="notificationClickChange()">notifications_none</span>
+    </div>
+    <!-- User Avatar -->
+    <div class="avatar">
+      <!-- Image -->
+      <div class="avatar-img">
+        <img src="{{avatar}}"/>
+      </div>
+      <!-- Name -->
+      <div class="full-name">{{fullname}}</div>
+      <!-- User Menu -->
+      <div class="material-icons user-menu" (click)="arrowClicked()" [ngClass]="{'arrow-flip': arrowFlip}">arrow_drop_down</div>
+    </div>
+    <!-- Notification Dropdown -->
+    <div class="notification-dropdown" *ngIf="notificationClicked">
+      <div class="notification-container">
+        <div *ngIf="!newNotifications">No new notifications.</div>
+        <div *ngIf="newNotifications">Notification 1 <span class="material-icons" (click)="notificationClosed()">close</span></div>
+      </div>
+    </div>
+    <!-- User Menu Dropdown -->
+    <div class="user-menu-dropdown" *ngIf="arrowFlip">
+      <div class="menu-item-container">
+        <a class="menu-item"><span class="material-icons">account_circle</span>Profile</a>
+        <a class="menu-item"><span class="material-icons">exit_to_app</span>Signout</a>
+      </div>
     </div>
   </nav>

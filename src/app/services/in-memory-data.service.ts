@@ -237,7 +237,54 @@ export class InMemoryDataService implements InMemoryDbService {
         no_activities: 6000
       }
     ]; 
-    return { totals, clients, projects, revenue, activities };
+    const members = [
+      {
+        uid: 1,
+        fname: 'Sundar',
+        lname: ' Pichai',
+        avatar_url: 'assets/sundar_pichai.jpg',
+        job_title: 'CEO',
+        completed_hours: 110,
+        total_hours: 150
+      },
+      {
+        uid: 2,
+        fname: 'Larry',
+        lname: 'Page',
+        avatar_url: 'assets/larry_page.jpg',
+        job_title: 'Co-Founder',
+        completed_hours: 75,
+        total_hours: 150
+      },
+      {
+        uid: 3,
+        fname: 'Sergey',
+        lname: 'Brin',
+        avatar_url: 'assets/sergey_brin.jpg',
+        job_title: 'Co-Founder',
+        completed_hours: 38,
+        total_hours: 150
+      },
+      {
+        uid: 4,
+        fname: 'John',
+        lname: 'Hennessy',
+        avatar_url: 'assets/john_hennessy.jpg',
+        job_title: 'Chair',
+        completed_hours: 48,
+        total_hours: 150
+      },
+      {
+        uid: 5,
+        fname: 'Ruth',
+        lname: 'Porat',
+        avatar_url: 'assets/ruth_porat.jpg',
+        job_title: 'CFO',
+        completed_hours: 100,
+        total_hours: 150
+      }
+    ];
+    return { totals, clients, projects, revenue, activities, members };
   }
 
 }

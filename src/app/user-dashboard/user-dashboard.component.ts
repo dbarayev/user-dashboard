@@ -6,11 +6,11 @@ import { ProjectsService } from '../services/projects.service';
 import { MonthlyTotalsService } from '../services/monthly-totals.service';
 import { ActivitiesService } from '../services/activities.service';
 
-import { Client } from './clients';
-import { Project } from './projects';
-import { Revenue } from './revenue';
-import { MonthlyTotals } from './monthly-totals';
-import { Activity } from './activity';
+import { Client } from './widgets/clients';
+import { Project } from './widgets/projects';
+import { Revenue } from './widgets/revenue';
+import { MonthlyTotals } from './widgets/monthly-totals';
+import { Activity } from './widgets/activity';
 
 import { Chart } from 'chart.js';
 

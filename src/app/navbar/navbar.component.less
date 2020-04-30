@@ -3,4 +3,111 @@
     .navbar-nav {
         margin: 0 auto;
     }
+    .notifications {
+        margin: 0 15px;
+    }
+    .avatar {
+        display: flex;
+        .avatar-img {
+            height: 2rem;
+            width: 2rem;
+            img {
+                height: 100%;
+                width: 100%;
+                border-radius: 40%;
+            }
+        }
+        .full-name {
+            margin: 5px 8px;
+        }   
+        .user-menu {
+            margin: auto;
+        }
+        .arrow-flip {
+            transform: rotateX(180deg);
+        } 
+    }
+    .user-menu-dropdown {
+        background-color: rgba(255,255,255,.7);
+        position: absolute;
+        right: 0;
+        top: 100%;
+        padding: 0 30px;
+        .menu-item-container {
+            display: grid;
+            .menu-item {
+                padding: 10px;
+                .material-icons {
+                    vertical-align: bottom;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    .notification-dropdown {
+        background-color: rgba(255,255,255,.7);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media(max-width:991px) {
+    nav {
+        display: grid;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        .navbar-brand {
+            grid-row: 1;
+            grid-column: 1;
+        }
+        .notifications {
+            grid-row: 1;
+            grid-column: 2;
+            justify-self: end;
+        }
+        .avatar {
+            grid-row: 1;
+            grid-column: 3;
+            justify-self: end;
+        }
+        #navbarNav {
+            grid-row: 2;
+            grid-column: 1;
+            justify-self: start;
+        }
+    }
+}
+
+@media(max-width:600px) {
+    nav {
+        grid-template-columns: 60% 20% 20%;
+        .navbar-nav {
+            display: grid;
+            grid-template-columns: 30% 30% 30% 30%;
+        }
+        .navbar-brand {
+            grid-row: 1;
+            grid-column: 1;
+        }
+        .notifications {
+            grid-row: 1;
+            grid-column: 2;
+        }
+        .avatar {
+            grid-row: 1;
+            grid-column: 3;
+            .full-name {
+                display: none;
+            }
+        }
+    }
+}
+
+@media(max-width:400px) {
+    nav {
+        .navbar-nav {
+            grid-template-columns: 40% 40% 40%;
+        }   
+    }
 }

@@ -1,0 +1,95 @@
+<div class="container">
+    <h1>Projects</h1>
+    <!-- Members -->
+    <div class="row">
+        <!-- Members Container-->
+        <div class="members-container">
+            <div class="container-header">
+                <h4>Members</h4>
+                <span class="view-all" data-toggle="modal" data-target="#memberModal">View All</span>    
+            </div>
+            <div class="all-members">
+                <div class="member" *ngFor="let member of member | slice:0:3">
+                    <span class="avatar"><img [src]="member.avatar_url"/></span>
+                    <span class="name">{{member.fname}} {{member.lname}}<br/><span class="job-title">{{member.job_title}}</span></span>
+                    
+                    <span class="hours"><strong>{{member.completed_hours}}h</strong>:{{member.total_hours}}h</span>
+                    <div class="progress-container">
+                        <circle-progress 
+                            [percent]="member.completed_hours/member.total_hours*100"
+                            [radius]="25"
+                            [outerStrokeWidth]="5"
+                            [innerStrokeWidth]="5"
+                            [space]="-5"
+                            [outerStrokeColor]="'#2f1d95'"
+                            [innerStrokeColor]="'#cfcaea'"
+                            [animation]="true"
+                            [animationDuration]="300"
+                            [showTitle]="true"
+                            [showSubtitle]="false"
+                            [showUnits]="true"
+                            [outerStrokeLinecap]="'square'">
+                        </circle-progress>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="memberModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content member-modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="memberModalTitle">Members</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <div class="all-members">
+                        <div class="member" *ngFor="let member of member">
+                            <span class="avatar"><img [src]="member.avatar_url"/></span>
+                            <span class="name">{{member.fname}} {{member.lname}}<br/><span class="job-title">{{member.job_title}}</span></span>
+                            
+                            <span class="hours"><strong>{{member.completed_hours}}h</strong>:{{member.total_hours}}h</span>
+                            <div class="progress-container">
+                                <circle-progress 
+                                    [percent]="member.completed_hours/member.total_hours*100"
+                                    [radius]="25"
+                                    [outerStrokeWidth]="5"
+                                    [innerStrokeWidth]="5"
+                                    [space]="-5"
+                                    [outerStrokeColor]="'#2f1d95'"
+                                    [innerStrokeColor]="'#cfcaea'"
+                                    [animation]="true"
+                                    [animationDuration]="300"
+                                    [showTitle]="true"
+                                    [showSubtitle]="false"
+                                    [showUnits]="true"
+                                    [outerStrokeLinecap]="'square'">
+                                </circle-progress>
+                            </div>
+                        </div>    
+                    </div>    
+
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Summary -->
+        <div class="summary-container">
+            <h4>Summary</h4>
+        </div>
+        <!-- Timeline -->
+        <div class="timeline-container">
+            <h4>Timeline</h4>
+        </div>
+        <!-- Budget -->
+        <div class="budget-container">
+            <h4>Budget</h4>
+        </div>
+        <!-- Activities -->
+        <div class="activities-container">
+            <h4>Activities</h4>
+        </div>
+    </div>
+</div>
