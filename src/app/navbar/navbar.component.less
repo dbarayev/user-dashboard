@@ -50,6 +50,13 @@
         top: 100%;
         left: 0;
         width: 100%;
+        .notification-container {
+            .notification {
+                span {
+                    vertical-align: text-bottom;
+                }
+            }
+        }
     }
 }
 
@@ -84,7 +91,8 @@
         grid-template-columns: 60% 20% 20%;
         .navbar-nav {
             display: grid;
-            grid-template-columns: 30% 30% 30% 30%;
+            /*grid-template-columns: 30% 30% 30% 30%;*/
+            grid-template-columns: 50% 50%;
         }
         .navbar-brand {
             grid-row: 1;
@@ -107,7 +115,8 @@
 @media(max-width:400px) {
     nav {
         .navbar-nav {
-            grid-template-columns: 40% 40% 40%;
+            /*grid-template-columns: 40% 40% 40%;*/
+            grid-template-columns: 50% 50%;
         }   
     }
 }

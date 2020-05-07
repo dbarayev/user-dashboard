@@ -8,15 +8,15 @@
                 <h4>Members</h4>
                 <span class="view-all" data-toggle="modal" data-target="#memberModal">View All</span>    
             </div>
-            <div class="all-members">
-                <div class="member" *ngFor="let member of member | slice:0:3">
-                    <span class="avatar"><img [src]="member.avatar_url"/></span>
-                    <span class="name">{{member.fname}} {{member.lname}}<br/><span class="job-title">{{member.job_title}}</span></span>
+            <div class="all-members" *ngIf="membersLoaded">
+                <div class="member" *ngFor="let mem of member | slice:0:3">
+                    <span class="avatar"><img [src]="mem.avatar_url"/></span>
+                    <span class="name">{{mem.fname}} {{mem.lname}}<br/><span class="job-title">{{mem.job_title}}</span></span>
                     
-                    <span class="hours"><strong>{{member.completed_hours}}h</strong>:{{member.total_hours}}h</span>
+                    <span class="hours"><strong>{{mem.completed_hours}}h</strong>:{{mem.total_hours}}h</span>
                     <div class="progress-container">
                         <circle-progress 
-                            [percent]="member.completed_hours/member.total_hours*100"
+                            [percent]="mem.completed_hours/mem.total_hours*100"
                             [radius]="25"
                             [outerStrokeWidth]="5"
                             [innerStrokeWidth]="5"
@@ -78,18 +78,28 @@
         <!-- Summary -->
         <div class="summary-container">
             <h4>Summary</h4>
+            <!-- Line Chart canvas -->
+            <div class="progress-canvas">
+                <canvas #progressCanvas height="100%">{{ progressChart }}</canvas>
+            </div>
         </div>
         <!-- Timeline -->
         <div class="timeline-container">
             <h4>Timeline</h4>
+            <div class="timeline-scheduler">
+                <ngx-ts
+                [items]="items"
+                [periods]="periods"
+                [sections]="sections"
+                [events]="events"
+                [showBusinessDayOnly]="true"
+                [showGoto]="false"
+                [showToday]="false"
+                [text]="textObj"
+                [allowDragging]="true"
+                ></ngx-ts>
+            </div>
         </div>
-        <!-- Budget -->
-        <div class="budget-container">
-            <h4>Budget</h4>
-        </div>
-        <!-- Activities -->
-        <div class="activities-container">
-            <h4>Activities</h4>
-        </div>
+
     </div>
 </div>

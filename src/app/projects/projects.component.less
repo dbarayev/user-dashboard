@@ -15,7 +15,6 @@
             }  
         }
         .all-members {
-            
             .member {
                 display: grid;
                 grid-template-columns: 18% 35% 25% 22%;
@@ -34,9 +33,7 @@
                         font-weight: normal;
                     }
                 }
-                .progress-container {
-                    
-                }
+                
             }    
         }
     }
@@ -50,27 +47,15 @@
     }
     .timeline-container {
         width: 100%;
-        height: 300px;
+        height: 500px;
         background-color: #ffffff;
         margin: 10px;
         border-radius: 10px;
         padding: 15px;
-    }
-    .budget-container {
-        width: 48%;
-        height: 300px;
-        background-color: #ffffff;
-        margin: 10px;
-        border-radius: 10px;
-        padding: 15px;
-    }
-    .activities-container {
-        width: 47%;
-        height: 300px;
-        background-color: #ffffff;
-        margin: 10px;
-        border-radius: 10px;
-        padding: 15px;
+        .timeline-scheduler {
+            height: 100%;
+            width: 100%;
+        }
     }
 }
 #memberModal {
@@ -98,10 +83,26 @@
                             font-weight: normal;
                         }
                     }
-                    .progress-container {
-                    }
+                    
                 }    
             }   
         }
+    }
+}
+@media(max-width:991px){
+    .container {
+        .members-container {
+            width: 55%;
+        }  
+    }
+}
+@media(max-width:768px){
+    .container {
+        .members-container {
+            width: 100%;
+        }
+        .summary-container {
+            width: 100%;
+        }  
     }
 }

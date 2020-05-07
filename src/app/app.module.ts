@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import {MatBadgeModule} from '@angular/material/badge';
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import {NgxTimeSchedulerModule} from 'ngx-time-scheduler';
 
 const appRoutes: Routes = [
   {
@@ -56,6 +57,7 @@ const appRoutes: Routes = [
     MatSelectModule,
     FormsModule,
     MatBadgeModule,
+    NgxTimeSchedulerModule,
 
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }

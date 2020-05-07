@@ -1,5 +1,5 @@
 export interface Member {
-    uid: number;
+    //uid: number;
     fname: string;
     lname: string;
     avatar_url: string;

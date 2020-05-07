@@ -239,7 +239,7 @@ export class InMemoryDataService implements InMemoryDbService {
     ]; 
     const members = [
       {
-        uid: 1,
+      //  uid: 1,
         fname: 'Sundar',
         lname: ' Pichai',
         avatar_url: 'assets/sundar_pichai.jpg',
@@ -248,7 +248,7 @@ export class InMemoryDataService implements InMemoryDbService {
         total_hours: 150
       },
       {
-        uid: 2,
+      //  uid: 2,
         fname: 'Larry',
         lname: 'Page',
         avatar_url: 'assets/larry_page.jpg',
@@ -257,7 +257,7 @@ export class InMemoryDataService implements InMemoryDbService {
         total_hours: 150
       },
       {
-        uid: 3,
+      //  uid: 3,
         fname: 'Sergey',
         lname: 'Brin',
         avatar_url: 'assets/sergey_brin.jpg',
@@ -266,7 +266,7 @@ export class InMemoryDataService implements InMemoryDbService {
         total_hours: 150
       },
       {
-        uid: 4,
+       // uid: 4,
         fname: 'John',
         lname: 'Hennessy',
         avatar_url: 'assets/john_hennessy.jpg',
@@ -275,7 +275,7 @@ export class InMemoryDataService implements InMemoryDbService {
         total_hours: 150
       },
       {
-        uid: 5,
+       // uid: 5,
         fname: 'Ruth',
         lname: 'Porat',
         avatar_url: 'assets/ruth_porat.jpg',

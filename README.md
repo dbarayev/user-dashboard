@@ -1,4 +1,5 @@
 ![App Preview/Screenshot](https://raw.githubusercontent.com/dbarayev/user-dashboard/master/src/assets/screenshot.png)
+![App Preview 2/Screenshot 2](https://raw.githubusercontent.com/dbarayev/user-dashboard/master/src/assets/screenshot2.png)
 
 # user-dashboard
 Sample user dashboard with angular.
@@ -21,6 +22,12 @@ Please install dependencies before running app!
 
 ### 4. Chart.js
 `npm install chart.js --save`
+
+### 5. ng-circle-progress
+`npm install ng-circle-progress --save`
+
+### 6. Angular Time Scheduler
+`npm install ngx-time-scheduler --save`
 
 
 ## Development server
