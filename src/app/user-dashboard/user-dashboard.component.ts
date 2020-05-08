@@ -13,6 +13,7 @@ import { MonthlyTotals } from './widgets/monthly-totals';
 import { Activity } from './widgets/activity';
 
 import { Chart } from 'chart.js';
+import 'chartjs-plugin-labels';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -31,11 +32,15 @@ export class UserDashboardComponent implements OnInit {
   revenue : Revenue;
   activity: Activity;
   //default check if totals have been loaded
-  totalIsLoaded = false;
+  totalIsLoaded : boolean = false;
   //check if revenue has loaded
-  revenueIsLoaded = false;
+  revenueIsLoaded : boolean = false;
   //default check if activities have loaded
-  activitiesAreLoaded = false;
+  activitiesAreLoaded : boolean = false;
+  //default check if projects have loaded
+  projectsAreLoaded: boolean = false;
+  //default check if project have loaded
+  clientsAreLoaded: boolean = false;
   //years for dropdown
   years = [];
   //default selected dropdown value for revenue year & convert date to string
@@ -44,7 +49,7 @@ export class UserDashboardComponent implements OnInit {
   //Get clients 
   getClients(): void {
     this.clientService.getClients()
-    .subscribe(client => {this.client = client});
+    .subscribe(client => {this.client = client; this.clientsAreLoaded = true;});
   }
   //Get monthly totals 
   getTotals(): void {
@@ -54,7 +59,7 @@ export class UserDashboardComponent implements OnInit {
   //get projects
   getProjects() : void {
     this.projectService.getProjects()
-    .subscribe(project=>{this.project = project});
+    .subscribe(project=>{this.project = project; this.projectsAreLoaded = true;});
   }
   //get activities
   getActivities() : void {
@@ -159,7 +164,12 @@ export class UserDashboardComponent implements OnInit {
     },
     options: {
       animation: {
-
+      },
+      plugins: {
+        labels: {
+          render: 'percentage',
+          fontColor: '#000000'
+        }
       },
       rotation: -0.6*Math.PI,
       legend: {

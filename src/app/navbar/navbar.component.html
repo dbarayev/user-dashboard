@@ -31,7 +31,7 @@
     </div>
     <!--Notifications-->
     <div class="notifications">
-      <span class="material-icons" *ngIf="!notificationClicked" (click)="notificationClickChange()" matBadge="{{notificationCounter}}" matBadgePosition="above after" matBadgeColor="warn" [matBadgeHidden]="!newNotifications">notifications</span>
+      <span class="material-icons" *ngIf="!notificationClicked" (click)="notificationClickChange()" matBadge="{{notifications.length}}" matBadgePosition="above after" matBadgeColor="warn" [matBadgeHidden]="!newNotifications">notifications</span>
       <span class="material-icons" *ngIf="notificationClicked" (click)="notificationClickChange()">notifications_none</span>
     </div>
     <!-- User Avatar -->
@@ -46,10 +46,11 @@
       <div class="material-icons user-menu" (click)="arrowClicked()" [ngClass]="{'arrow-flip': arrowFlip}">arrow_drop_down</div>
     </div>
     <!-- Notification Dropdown -->
-    <div class="notification-dropdown" *ngIf="notificationClicked">
+    <div class="notification-dropdown" *ngIf="notificationClicked" [ngClass]="{'fadeIn': notificationClicked}">
       <div class="notification-container">
         <div *ngIf="!newNotifications">No new notifications.</div>
-        <div *ngIf="newNotifications" class="notification">Test Notification 1 <span class="material-icons" (click)="notificationClosed()">highlight_off</span></div>
+        <div *ngIf="newNotifications"><div class="notification" *ngFor="let notification of notifications; index as i;">{{notification.details}}<span class="material-icons" (click)="notificationClosed(i)">highlight_off</span></div></div>
+        <!--<div *ngIf="newNotifications" class="notification">Test Notification 1 <span class="material-icons" (click)="notificationClosed(this)">highlight_off</span></div>-->
       </div>
     </div>
     <!-- User Menu Dropdown -->

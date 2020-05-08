@@ -1,31 +1,32 @@
 <div class="container dashboard-container">
     <h1>Dashboard</h1>
+    <div class="loader" [hidden]="totalIsLoaded && revenueIsLoaded && activitiesAreLoaded && projectsAreLoaded && clientsAreLoaded"></div>
     <!-- Monthly Totals -->
-    <div class="row total-row" *ngIf="totalIsLoaded">
+    <div class="row total-row" *ngIf="totalIsLoaded" [ngClass]="{'fadeIn': totalIsLoaded}">
         <div class="item-average-container flex-wrap" *ngFor="let total of monthly_totals">
             <!-- Project Budget -->
             <div class="item-average">
-                <div>Project Budget</div>
+                <div class="item-label">Project Budget</div>
                 <div><strong>{{total.project_budget | currency: 'USD' : 'symbol': '1.0-0'}}</strong></div>
             </div>
             <!-- Revenue This Month -->
             <div class="item-average">
-                <div>Revenue This Month</div>
+                <div class="item-label">Revenue This Month</div>
                 <div><strong>{{total.revenue | currency: 'USD' : 'symbol': '1.0-0'}}</strong></div>
             </div>
             <!-- New Leads This Month -->
             <div class="item-average">
-                <div>New Leads This Month</div>
+                <div class="item-label">New Leads This Month</div>
                 <div><strong>{{total.leads}}</strong></div>
             </div>
             <!-- Quoted This Month -->
             <div class="item-average">
-                <div>Quoted This Month</div>
+                <div class="item-label">Quoted This Month</div>
                 <div><strong>{{total.quoted | currency: 'USD' : 'symbol': '1.0-0'}}</strong></div>
             </div>
             <!-- Outstanding Invoices -->
             <div class="item-average">
-                <div>Outstanding Invoices</div>
+                <div class="item-label">Outstanding Invoices</div>
                 <div><strong>{{total.outstanding_invoices | currency: 'USD' : 'symbol': '1.0-0'}}</strong></div>
             </div>
         </div>
@@ -33,7 +34,7 @@
     <!-- Revenue and Activities -->
     <div class="row">
         <!-- Revenue -->
-        <div class="revenue-container widget" [hidden]="!revenueIsLoaded">
+        <div class="revenue-container widget" [hidden]="!revenueIsLoaded" [ngClass]="{'fadeIn': revenueIsLoaded}">
             <h4>Revenue</h4>
             <mat-form-field>
                 <mat-label>Year</mat-label>
@@ -48,7 +49,7 @@
 
         </div>
         <!-- Activities by Teams -->
-        <div class="activities-container widget" [hidden]="!activitiesAreLoaded">
+        <div class="activities-container widget" [hidden]="!activitiesAreLoaded" [ngClass]="{'fadeIn': activitiesAreLoaded}">
             <h4>Activities by Teams</h4>
             <!-- Doughnut Chart canvas -->
             <div>
@@ -59,7 +60,7 @@
     <!-- Projects and Clients -->
     <div class="row">
         <!-- All Projects -->
-        <div class="all-projects-container widget">
+        <div class="all-projects-container widget" [hidden]="!projectsAreLoaded" [ngClass]="{'fadeIn': projectsAreLoaded}">
             <h4>All Projects</h4>
             <div class="table-responsive">
                 <table class="table table-hover">
@@ -85,7 +86,7 @@
             </div>
         </div>
         <!-- Clients -->
-        <div class="clients-container widget">
+        <div class="clients-container widget" [hidden]="!clientsAreLoaded" [ngClass]="{'fadeIn': clientsAreLoaded}">
             <h4>Clients</h4>
             <div class="table-responsive">
                 <table class="table table-hover">

@@ -20,8 +20,9 @@ Please install dependencies before running app!
 ### 3. In-memory-web-api
 `npm install angular-in-memory-web-api --save`
 
-### 4. Chart.js
+### 4. Chart.js & plugin
 `npm install chart.js --save`
+`npm install chartjs-plugin-labels --save`
 
 ### 5. ng-circle-progress
 `npm install ng-circle-progress --save`

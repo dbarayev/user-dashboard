@@ -16,6 +16,8 @@ export class ProjectsComponent implements OnInit {
   constructor(private memberService: MembersService, private service: NgxTimeSchedulerService) { }
   member : any;
   membersLoaded : boolean = false;
+  timelineLoaded : boolean = false;
+  progressChartLoaded : boolean = false;
   //Time Scheduler
   events: Events = new Events();
   periods: Period[];
@@ -78,7 +80,7 @@ export class ProjectsComponent implements OnInit {
       end: moment().add(15, 'days').endOf('day'),
       classes: 'item-warning'
     }];
- 
+    this.timelineLoaded = true;
   }
  
   addItem() {
@@ -128,6 +130,9 @@ export class ProjectsComponent implements OnInit {
           legend: {
             display: false
           },
+          plugins: {
+            labels: false
+          },
           scales: {
             xAxes: [{
               display: true,
@@ -143,6 +148,7 @@ export class ProjectsComponent implements OnInit {
           }
         }
         });
+        this.progressChartLoaded = true;
   }
 
 

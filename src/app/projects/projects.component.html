@@ -1,9 +1,10 @@
 <div class="container">
     <h1>Projects</h1>
+    <div class="loader" [hidden]="membersLoaded && progressChartLoaded && timelineLoaded"></div>
     <!-- Members -->
     <div class="row">
         <!-- Members Container-->
-        <div class="members-container">
+        <div class="members-container" [hidden]="!membersLoaded" [ngClass]="{'fadeIn': membersLoaded}">
             <div class="container-header">
                 <h4>Members</h4>
                 <span class="view-all" data-toggle="modal" data-target="#memberModal">View All</span>    
@@ -76,7 +77,7 @@
             </div>
         </div>
         <!-- Summary -->
-        <div class="summary-container">
+        <div class="summary-container" [hidden]="!progressChartLoaded" [ngClass]="{'fadeIn': progressChartLoaded}">
             <h4>Summary</h4>
             <!-- Line Chart canvas -->
             <div class="progress-canvas">
@@ -84,7 +85,7 @@
             </div>
         </div>
         <!-- Timeline -->
-        <div class="timeline-container">
+        <div class="timeline-container" [hidden]="!timelineLoaded" [ngClass]="{'fadeIn': timelineLoaded}">
             <h4>Timeline</h4>
             <div class="timeline-scheduler">
                 <ngx-ts

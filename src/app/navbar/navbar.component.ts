@@ -14,8 +14,9 @@ export class NavbarComponent implements OnInit {
   notificationClicked : boolean = false;
   arrowFlip : boolean = false;
   bellClick : boolean = false;
+  notifications = [{name:'notification1', details: 'Project for Deyamox Ltd. is on hold.'}, {name:'notification2', details: 'SEO for Optimal Group needs your attention.'}];
   newNotifications : boolean = true;
-  notificationCounter : number = 1;
+  notificationCounter : number;
 
   //Notification clicked
   notificationClickChange() : void {
@@ -29,9 +30,10 @@ export class NavbarComponent implements OnInit {
     this.arrowFlip = !this.arrowFlip;
   }
   //User clears notification
-  notificationClosed() : void {
-    this.notificationCounter -= 1;
-    console.log(this.notificationCounter);
+  notificationClosed(item) : void {
+    //Remove notification from array and set counter
+    this.notifications.splice(item, 1);
+    this.notificationCounter = this.notifications.length;
   }
 
 
