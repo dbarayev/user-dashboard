@@ -8,28 +8,6 @@ This project was inspired by the design created by [Abir Mahmood](https://www.li
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
-## Dependencies
-Please install dependencies before running app!
-
-### 1. Bootstrap and jQuery
-`npm install bootstrap jquery --save`
-
-### 2. Angular Material
-`ng add @angular/material`
-
-### 3. In-memory-web-api
-`npm install angular-in-memory-web-api --save`
-
-### 4. Chart.js & plugin
-`npm install chart.js --save`
-`npm install chartjs-plugin-labels --save`
-
-### 5. ng-circle-progress
-`npm install ng-circle-progress --save`
-
-### 6. Angular Time Scheduler
-`npm install ngx-time-scheduler --save`
-
 
 ## Development server
 
